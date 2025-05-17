@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto EastWood - Teatro</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Projeto EastWood - Teatro</h1>
+    </div>
+  </header>
+  
+  
+  <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox">
+      <div class="slider-icon">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </div>
+    </label>
+  </div>
+
+  <nav>
+    <a href="../index.html">🏠 Início</a>
+    <a href="../tecnico/index.html">🤖 Parte Técnica</a>
+  </nav>
+
+  <main>
+    <section class="sobre">
+      <div class="container">
+        <h2>Sobre o Teatro</h2>
+        <p>
+          Nosso projeto teatral leva o nome “EastWood” em homenagem ao gênero faroeste, com uma abordagem moderna, criativa e educativa. Exploramos temas de justiça, coragem e coletividade em meio a uma estética do velho oeste.
+        </p>
+      </div>
+    </section>
+
+    <section class="integrantes">
+      <div class="container">
+        <h2>Personagens</h2>
+        <div class="grid-membros">
+
+            <article class="team-member">
+                <img src="./img/Tiago.jpeg" alt="Codey McLane">
+                <h3 class="team-member-name">Codey "F. Stack" McLane, o cowboy</h3>
+                <p class="team-member-info">
+                  <strong>Ator:</strong> Tiago F. Gregório<br>
+                  <strong>Descrição:</strong> Remete a personagens clássicos do faroeste como Clint Eastwood. Usa chapéu de cowboy, calça jeans e colete.
+                </p>
+              </article>
+
+              <article class="team-member">
+                <img src="./img/Queiroz.jpeg" alt="Dexter Debugger">
+                <h3 class="team-member-name">Dexter "Debugger" Steele, o programador free lancer </h3>
+                <p class="team-member-info">
+                  <strong>Ator:</strong>Nycolas Q. Gimenez<br>
+                  <strong>Descrição:</strong>Corajoso e carismático, usa roupas casuais e tem função cômica.
+                </p>
+              </article>
+
+              <article class="team-member">
+                <img src="./img/Luiz.jpeg" alt="Carl Compile">
+                <h3 class="team-member-name">Carl "Compile" Johnson, o programador CLT</h3>
+                <p class="team-member-info">
+                  <strong>Ator:</strong>Luiz O. Siqueira<br>
+                  <strong>Descrição:</strong> Mais sério, realista, usa camisa social, gravata e joga Minecraft.
+                </p>
+              </article>
+              <article class="team-member">
+                <img src="./img/Paiva.jpeg" alt="Logan M. Byte">
+                <h3 class="team-member-name">Logan M. Byte, o programador Home Office</h3>
+                <p class="team-member-info">
+                  <strong>Ator:</strong>Nicolas P. Medeiros<br>
+                  <strong>Descrição:</strong> Alívio cômico, veste roupão azul e pijama, gosta de Valorant.
+                </p>
+              </article>
+              <article class="team-member">
+                <img src="./img/WhatsApp Image 2025-04-11 at 20.54.43.jpeg" alt="Al B. Gorithm">
+                <h3 class="team-member-name">Al B. Gorithm</h3>
+                <p class="team-member-info">
+                  <strong>Ator:</strong>Robô principal<br>
+                  <strong>Dubladora:</strong> Luana C. M. Pícolo
+                  <strong>Descrição:</strong> Robô com webcam, notebook e duas personalidades:
+                   arrogante/dominante e humilde/consciente.
+                </p>  
+              </article>
+
+            </article>
+            <article class="team-member">
+              <img src="./img/WhatsApp Image 2025-04-11 at 20.54.42.jpeg" alt="Quezadilhas e Pé de Piche">
+              <h3 class="team-member-name">Quezadilhas e Pé de Piche</h3>
+              <p class="team-member-info">
+                <strong>Ator:</strong>Robô secundário<br>
+                <strong>Descrição:</strong> Lagarto mercenário de Lego, controlado por SPIKE.
+                 Papel essencial na libertação dos programadores.
+              </p>
+            </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+ 
+
+  <footer>
+    <div class="footer-content">
+      <img src="../img/logo.svg" alt="Logo Esquerda" class="footer-logo logo-esquerda" />
+      <div class="footer-text">
+        <p>© 2025 Projeto EastWood - Todos os direitos reservados</p>
+      </div>
+      <img src="../img/sesi-logo.svg" alt="Logo Direita" class="footer-logo logo-direita" />
+    </div>
+  </footer>
+  <footer class="site-footer">
+
+  <script>
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'enabled') {
+      document.body.classList.add('dark-mode');
+      document.querySelector('.theme-switch input').checked = true;
+    }
+
+    document.querySelector('.theme-switch input').addEventListener('change', (event) => {
+      if (event.target.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'disabled');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Eastwood - SESI Hortobots</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Botão para alternar entre os temas -->
+  <div class="switch-container" onclick="toggleTheme()">
+    <div class="switch-icon sun">
+      🌞
+    </div>
+    <div class="switch-icon moon">
+      🌙
+    </div>
+  </div>
+
+
+
+  <header>
+    <h1>Projeto Eastwood</h1>
+    <h2>SESI Hortobots</h2>
+  </header>
+
+  <nav>
+    <a href="../index.html">Home🏠</a>
+    <a href="../teatro/index-teatro.html">Teatro 🎭</a>
+
+
+  </nav>
+
+  <main>
+    <section class="intro">
+      <h2>Bem-vindo ao Projeto Eastwood</h2>
+      <p>A apresentação combina elementos de comédia e criatividade com a proposta de representar um cenário faroeste
+        futurista. Este projeto foi idealizado e executado pela equipe SESI Hortobots com foco em inovação e
+        entretenimento educacional.</p>
+    </section>
+
+    <section id="robos">
+      <h2>Nossos Robôs</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Al Byte Gorithm</h3>
+          <p>Nosso robô principal, inspirado em heróis de faroeste, combina inteligência artificial com precisão
+            mecânica para enfrentar desafios com estilo.</p>
+        </div>
+        <div class="card">
+          <h3>Quezadilhas</h3>
+          <p>Um robô pequeno que contracena com Al Byte Gorithm. Ele representa um companheiro fiel e curioso, com
+            movimentos leves e bem-humorados.</p>
+        </div>
+        <div class="card">
+          <h3>Acionador TNT</h3>
+          <p>Um robô que representa um acionador de TNT usado em uma das cenas da apresentação. Ele é ativado de maneira
+            cênica para trazer emoção à narrativa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos">
+      <h2>Recursos Utilizados</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Locomoção</h3>
+          <p>Tanto o robô principal quanto os robôs secundários utilizam rodas com tração diferencial para garantir
+            precisão e manobrabilidade.</p>
+        </div>
+        <div class="card">
+          <h3>Estrutura Interna</h3>
+          <p>O corpo do robô foi construído com materiais leves e resistentes, como PVC expandido e chapas de alumínio,
+            visando estabilidade e praticidade.</p>
+        </div>
+        <div class="card">
+          <h3>Programação</h3>
+          <p>O desenvolvimento do código envolveu múltiplas linguagens e abordagens:</p>
+          <ul>
+            <li><strong>Python:</strong> Utilizado para sequências automáticas e comportamentos dinâmicos.</li>
+            <li><strong>C/C++:</strong> Controle de hardware no Arduino.</li>
+            <li><strong>Integração:</strong> Comunicação serial entre Python e Arduino para sincronização.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Autonomia e Bateria</h3>
+          <p>Al Byte Gorithm é equipado com uma bateria de polímero de lítio que garante autonomia suficiente para toda
+            a apresentação sem necessidade de recarga.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>Vídeo Técnico Explicativo</h2>
+      <p>Abaixo você pode assistir ao vídeo técnico que apresenta em detalhes o funcionamento, montagem e lógica de
+        programação por trás dos nossos robôs.</p>
+      <!-- Substituir o link abaixo pelo vídeo correto -->
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/2bO-ns-lPuQ" frameborder="0"
+        allowfullscreen></iframe>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <!-- Logo à esquerda -->
+      <img src="./img/sesi-logo.svg" alt="Logo SESI" class="footer-logo sesi-logo" />
+
+      <!-- Texto centralizado -->
+      <p class="footer-text">© 2025 SESI Hortobots. Todos os direitos reservados.</p>
+
+      <!-- Logo à direita -->
+      <img src="./img/logo.svg" alt="Logo Hortobots" class="footer-logo hortobots-logo" />
+    </div>
+  </footer>
+
+  <script>
+    // Função para alternar entre o tema claro e escuro
+    function toggleTheme() {
+      const html = document.documentElement;
+      const switchContainer = document.querySelector('.switch-container');
+
+      // Se o tema atual for claro, muda para escuro
+      if (html.classList.contains('light')) {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        switchContainer.classList.add('dark');
+        switchContainer.classList.remove('light');
+        localStorage.setItem('theme', 'dark'); // Salva a preferência
+      } else {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        switchContainer.classList.add('light');
+        switchContainer.classList.remove('dark');
+        localStorage.setItem('theme', 'light'); // Salva a preferência
+      }
+    }
+
+    // Verifica se a preferência do tema foi salva
+    window.onload = function () {
+      const savedTheme = localStorage.getItem('theme');
+      const switchContainer = document.querySelector('.switch-container');
+
+      if (savedTheme) {
+        document.documentElement.classList.add(savedTheme);
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        switchContainer.classList.add(savedTheme);
+        switchContainer.classList.remove(savedTheme === 'dark' ? 'light' : 'dark');
+      } else {
+        // Se não houver preferência salva, o site usa o modo claro por padrão
+        document.documentElement.classList.add('light');
+        document.documentElement.setAttribute('data-theme', 'light');
+        switchContainer.classList.add('light');
+      }
+    };
+  </script>
+
+</body>
+
+</html>
